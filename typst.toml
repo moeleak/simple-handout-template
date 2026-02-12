@@ -2,14 +2,14 @@
 name = "simple-handout"
 version = "0.1.0"
 entrypoint = "src/lib.typ"
-authors = ["chillcicada"]
+authors = ["chillcicada" "moeleak"]
 license = "MIT"
 description = "A simple handout template."
-repository = "https://github.com/chillcicada/simple-handout-template"
+repository = "https://github.com/moeleak/simple-handout-template"
 keywords = ["book", "handout", "template"]
 categories = ["book"]
 exclude = [".*", "example"]
-compiler = "0.13.0"
+compiler = "0.14.2"
 
 [template]
 path = "template"

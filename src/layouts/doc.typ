@@ -11,7 +11,7 @@
   region: "zh",
   margin: (:),
   fallback: false,
-  use-fakebold: true,
+  use-fakebold: false,
   // self
   it,
 ) = {

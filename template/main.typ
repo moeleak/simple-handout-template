@@ -1,8 +1,6 @@
-// #import "../src/lib.typ": define-config
 #import "@preview/simple-handout:0.1.0": define-config
 
-/// 以下字体配置适用于安装了 Windows 10/11 字体及 Windows 10/11 简体中文字体扩展的设备，
-/// 请勿修改 font-family 中定义的键值，一般情况下，其含义为：
+/// 以下字体配置使用思源（Source Han）家族字体，
 /// - SongTi: 宋体，正文字体，通常对应西文中的衬线字体
 /// - HeiTi: 黑体，标题字体，通常对应西文中的无衬线字体
 /// - KaiTi: 楷体，用于说明性文本和主观性的表达
@@ -11,28 +9,30 @@
 /// - Math: 数学字体，通常用于数学公式和符号，中文字体默认使用楷体
 #let font-family = (
   SongTi: (
-    (name: "Times New Roman", covers: "latin-in-cjk"),
-    "NSimSun",
+    "Source Han Serif SC",
+    "Source Han Serif",
   ),
   HeiTi: (
-    (name: "Arial", covers: "latin-in-cjk"),
-    "SimHei",
+    "Source Han Sans SC",
+    "Source Han Sans",
   ),
   KaiTi: (
-    (name: "Times New Roman", covers: "latin-in-cjk"),
-    "KaiTi",
+    "Source Han Serif SC",
+    "Source Han Serif",
   ),
   FangSong: (
-    (name: "Times New Roman", covers: "latin-in-cjk"),
-    "FangSong",
+    "Source Han Serif SC",
+    "Source Han Serif",
   ),
   Mono: (
-    (name: "DejaVu Sans Mono", covers: "latin-in-cjk"),
-    "SimHei",
+    "Source Han Mono SC",
+    "Source Han Mono",
+    "Source Han Sans SC",
   ),
   Math: (
     "New Computer Modern Math",
-    "KaiTi",
+    "Source Han Serif SC",
+    "Source Han Serif",
   ),
 )
 
@@ -59,26 +59,32 @@
 ) = define-config(
   info: (
     title: (
-      title: "标题",
-      subtitle: "副标题",
+      title: "Lorem Ipsum",
+      subtitle: "Dolor Sit Amet",
     ),
     authors: (
       (
-        name: "作者",
-        email: "mail@example.com",
+        name: "Lorem Ipsum",
+        email: "lorem@example.com",
       ),
     ),
     version: "0.0.0",
   ),
   font: font-family,
-  bibliography: bibliography.with("refs.bib"),
+)
+
+#let placeholder(width: 100%, height: 6cm) = rect(
+  width: width,
+  height: height,
+  fill: luma(92%),
+  stroke: luma(75%),
 )
 
 /// Document Configuration
 #show: meta
 
 /// Font Display Page
-#font-display()
+// #font-display()
 
 /// Cover Page
 #cover()
@@ -93,7 +99,40 @@
 #show: front-matter
 
 // Preface Page
-#preface[]
+#preface[
+
+#lorem(90)
+
+#lorem(90)
+
+#lorem(18)
+
+1. #lorem(12)
+2. #lorem(12)
+3. #lorem(12)
+4. #lorem(12)
+5. #strike[#lorem(6)]
+
+#lorem(20)
+
+#align(center)[
+  #grid(columns: 3, gutter: 8pt, align: top,
+    figure(
+      placeholder(width: 100%, height: 8cm),
+      caption: [#lorem(4)],
+    ),
+    figure(
+      placeholder(width: 100%, height: 8cm),
+      caption: [#lorem(4)],
+    ),
+    figure(
+      placeholder(width: 100%, height: 8cm),
+      caption: [#lorem(4)],
+    ),
+  )
+]
+
+]
 
 // Outline Page
 #outline-wrapper()
@@ -104,26 +143,144 @@
 
 #show: main-matter
 
-= 第一部分
+= #lorem(2)
 
-== 第1.1章
+#lorem(40)
+#lorem(30)
 
-=== 第1.1.1节
+== #lorem(2)
+
+#lorem(50)
+
+== #lorem(2)
+
+#lorem(35)
+
+=== #lorem(2)
+
+#lorem(30)
+
+=== #lorem(2)
+
+#lorem(45)
+
+= #lorem(3)
+
+== #lorem(2)
+
+#align(center)[
+  #figure(
+    placeholder(width: 45%, height: 6cm),
+    caption: [#lorem(4)]
+  )
+]
+
+#lorem(30)
+
+#lorem(25)
+
+=== #lorem(6)
+
+#lorem(90)
+
+#align(center)[
+  #figure(
+    placeholder(width: 65%, height: 7cm),
+    caption: [#lorem(6)]
+  )
+]
+
+=== #lorem(6)
+
+#lorem(36) #footnote([#lorem(8)]) #lorem(36)
+
+=== #lorem(6)
+
+#lorem(70)
+
+#align(center)[
+  #figure(
+    grid(
+      columns: 2,
+      gutter: 15pt,
+      placeholder(width: 100%, height: 5cm),
+      placeholder(width: 100%, height: 5cm),
+    ),
+    caption: [#lorem(4)]
+  )
+]
+
+=== #lorem(6)
+
+#lorem(70)
+
+#align(center)[
+  #grid(columns: 3, gutter: 12pt, align: top,
+    figure(
+      placeholder(width: 100%, height: 4cm),
+      caption: [#lorem(3)],
+    ),
+    figure(
+      placeholder(width: 100%, height: 4cm),
+      caption: [#lorem(3)],
+    ),
+    figure(
+      placeholder(width: 100%, height: 4cm),
+      caption: [#lorem(3)],
+    ),
+  )
+]
+
+=== #lorem(6)
+
+#lorem(55)
+
+== #lorem(4)
+
+#lorem(24)
+
+1. #strong[#lorem(2)]：#lorem(22)
+2. #strong[#lorem(2)]：#lorem(22)
+3. #strong[#lorem(2)]：#lorem(22)
+4. #strong[#lorem(2)]：#lorem(22)
+
+#lorem(18)
+
+= #lorem(6)
+
+#lorem(80)
+
+#lorem(80)
+
+= #lorem(2)
+
+#lorem(70)
+
+#lorem(60)
+
+#align(center)[
+  #figure(
+    placeholder(width: 80%, height: 6cm),
+    caption: [#lorem(8)]
+  )
+]
+
+= #lorem(6)
+
+#lorem(40)
+
+#lorem(60)
+
+1. #strong[#lorem(2)]：#lorem(20)
+2. #strong[#lorem(2)]：#lorem(20)
+3. #strong[#lorem(2)]：#lorem(20)
+4. #strong[#lorem(2)]：#lorem(20)
+5. #strong[#lorem(2)]：#lorem(20)
+
+#lorem(40)
 
 /// ----------- ///
 /// Back Matter ///
 /// ----------- ///
 
 #show: back-matter
-
-#notation[
-  / D#sub[m]: 预混通道外径 (mm)
-]
-
-#figure-list()
-
-#table-list()
-
-#equation-list()
-
-#bilingual-bibliography()
